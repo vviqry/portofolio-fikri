@@ -408,6 +408,17 @@
       #portfolio .card {
         background-color: var(--light-gray);
       }
+      /* Reveal Animation */
+      .reveal-bottom {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
     </style>
   </head>
   <body>
@@ -458,7 +469,7 @@
     <!-- NAVBAR END -->
 
     <!-- HERO SECTION -->
-    <section class="hero text-center text-sm-start">
+    <section class="hero text-center text-sm-start reveal-bottom">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-5 p-0 text-center text-md-start">
@@ -509,7 +520,7 @@
     <!-- ABOUT ME -->
     <section class="about" id="aboutme">
       <div class="container">
-        <div class="about-card">
+        <div class="about-card reveal-bottom">
           <p>
             Lulusan bootcamp Harisenin.com dan Pondok IT Jogja dengan minat kuat pada Web Development (React 19, Next.js 16, Tailwind CSS, Redux, Zustand, MySQL). Memiliki keunggulan dalam kemampuan adaptasi cepat dan menerapkan ekosistem "Vibe Engineering" merancang arsitektur sistem secara fundamental dan mendelegasikan eksekusi kepada AI untuk efisiensi development yang maksimal. Saat ini mencari peluang penuh waktu sebagai Fullstack Developer untuk mengaplikasikan keahlian modern web development dan terus bertumbuh menuju visi menjadi Senior Software & AI Engineer.
           </p>
@@ -525,7 +536,7 @@
     </section>
 
     <!-- TOOLS & TECH STACK -->
-    <section class="tools-section" id="tools">
+    <section class="tools-section reveal-bottom" id="tools">
       <div class="container">
         <h2 class="display-6">Tools</h2>
         <p class="subtitle">Berikut beberapa tools yang biasa saya gunakan untuk pembuatan website atau desain</p>
@@ -665,7 +676,7 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio reveal-bottom" id="portfolio">
       <div class="container">
         <h2 class="fw-bold display-6">My Projects</h2>
         <p class="w-100 w-md-50 mx-auto text-center">
@@ -678,7 +689,7 @@
         >
           <button
             type="button"
-            class="btn btn-outline-success filter-btn active"
+            class="btn btn-outline-success filter-btn"
             data-filter="all"
           >
             All
@@ -686,7 +697,7 @@
           <div class="btn-group" role="group" aria-label="Filter Portfolio">
             <button
               type="button"
-              class="btn btn-outline-success filter-btn"
+              class="btn btn-outline-success filter-btn active"
               data-filter="fullstack"
             >
               Fullstack Apps
@@ -1034,7 +1045,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section reveal-bottom" id="contact">
       <div class="container">
         <h2 class="fw-bold display-6 text-center">Contact</h2>
         <p class="text-center text-muted">Mari terhubung dengan saya</p>
@@ -1100,8 +1111,13 @@
         const projects = document.querySelectorAll(".project");
         const filterBtns = document.querySelectorAll(".filter-btn");
 
-        // Show all projects on load
-        projects.forEach((p) => (p.style.display = "block"));
+        // Show Fullstack Apps projects on load by default
+        const defaultFilter = "fullstack";
+        projects.forEach((project) => {
+          project.style.display = project.classList.contains(defaultFilter)
+            ? "block"
+            : "none";
+        });
 
         // Filter logic
         filterBtns.forEach((button) => {
@@ -1124,6 +1140,23 @@
             });
           });
         });
+      });
+
+      // Scroll Reveal Animation (Intersection Observer)
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal-bottom").forEach((el) => {
+        observer.observe(el);
       });
     </script>
   </body>

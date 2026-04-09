@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // Determine language: check localStorage, otherwise navigator.language
   let currentLang = localStorage.getItem("preferred_lang");

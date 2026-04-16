@@ -50,23 +50,23 @@ const Hero = () => {
               className="text-left text-[36px] md:text-5xl lg:text-6xl"
             />
 
-            <p className="text-left max-w-xl text-xs md:text-sm lg:text-base text-gray-400 mt-4 mb-8">
-              {t.hero_desc}
-            </p>
-
-            {/* Profile photo — mobile only (below desc, above button) */}
-            <div className="flex md:hidden justify-center w-full mb-8">
-              <div className="w-52 h-52 rounded-full overflow-hidden border-2 border-purple/50 shadow-[0_0_40px_rgba(203,172,249,0.35)]">
+            {/* Profile photo — mobile only (between title and desc) */}
+            <div className="flex md:hidden justify-center w-full my-6">
+              <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-purple/50 shadow-[0_0_40px_rgba(203,172,249,0.35)]">
                 <Image
                   src="/foto.jpg"
                   alt="Mutsaqoful Fikri"
-                  width={208}
-                  height={208}
+                  width={192}
+                  height={192}
                   className="object-cover w-full h-full"
                   priority
                 />
               </div>
             </div>
+
+            <p className="text-left max-w-xl text-xs md:text-sm lg:text-base text-gray-400 mb-8">
+              {t.hero_desc}
+            </p>
 
             <MagicButton
               title={t.hero_btn}

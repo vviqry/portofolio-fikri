@@ -35,9 +35,7 @@ const Hero = () => {
 
       <div className="flex justify-center relative z-10">
         <div className="max-w-[89vw] md:max-w-3xl lg:max-w-[65vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4">
-            DYNAMIC WEB MAGIC WITH NEXT.JS
-          </p>
+
 
           {/* Profile Photo */}
           <div className="mb-6 relative">

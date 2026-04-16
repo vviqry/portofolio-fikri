@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fikri</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="tugas.ico" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Warna utama: Hitam dan Hijau Hutan */
+      :root {
+        --primary-black: #1a1a1a;
+        --primary-green: #2d6a3f;
+        --primary-green-hover: #245832;
+        --light-gray: #f1f1f1;
+        --white: #ffffff;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--primary-black);
+        padding: 15px 0;
+      }
+
+      header .navbar-brand {
+        color: var(--primary-green) !important;
+        font-weight: bold;
+      }
+
+      header .nav-link {
+        color: var(--white) !important;
+        margin: 0 10px;
+      }
+
+      header .nav-link:hover {
+        color: var(--primary-green) !important;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--light-gray);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 20px 40px;
+      }
+
+      .hero h2 {
+        color: var(--primary-black);
+      }
+
+      .hero p {
+        color: #666;
+      }
+
+      .hero img {
+        border-radius: 20px;
+        max-width: 100%;
+      }
+
+      .hero .btn-primary {
+        background-color: var(--primary-green);
+        border: none;
+      }
+
+      .hero .btn-primary:hover {
+        background-color: var(--primary-green-hover);
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--light-gray);
+        padding: 80px 20px;
+      }
+
+      .about h2 {
+        color: var(--primary-black);
+      }
+
+      .about-card {
+        background-color: var(--white);
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 40px 48px;
+        max-width: 750px;
+        margin: 0 auto;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      }
+
+      .about-card p {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 0;
+      }
+
+      .about-card .about-footer {
+        display: flex;
+        align-items: center;
+        margin-top: 28px;
+        gap: 24px;
+      }
+
+      .about-card .about-footer img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--primary-green);
+      }
+
+      .about-card .about-footer .stat {
+        text-align: left;
+      }
+
+      .about-card .about-footer .stat .number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-black);
+        line-height: 1;
+      }
+
+      .about-card .about-footer .stat .number span {
+        color: var(--primary-green);
+      }
+
+      .about-card .about-footer .stat .label {
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      /* Tools Section */
+      .tools-section {
+        background-color: var(--white);
+        padding: 80px 20px;
+      }
+
+      .tools-section h2 {
+        color: var(--primary-black);
+        font-weight: bold;
+      }
+
+      .tools-section .subtitle {
+        color: #666;
+        max-width: 500px;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      @media (max-width: 768px) {
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .tool-card {
+        background-color: var(--white);
+        border: 1px solid #e8e8e8;
+        border-radius: 12px;
+        padding: 20px 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transition: all 0.2s ease;
+      }
+
+      .tool-card:hover {
+        border-color: var(--primary-green);
+        box-shadow: 0 4px 16px rgba(45, 106, 63, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .tool-card img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .tool-card .tool-info {
+        text-align: left;
+      }
+
+      .tool-card .tool-info .tool-name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--primary-black);
+        line-height: 1.2;
+      }
+
+      .tool-card .tool-info .tool-label {
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .navbar-brand {
+        text-shadow: 0 0 5px #2d6a3f, 0 0 10px #2d6a3f, 0 0 20px #2d6a3f;
+        font-family: "Orbitron", sans-serif; /* contoh font keren */
+        letter-spacing: 1px;
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        background-color: var(--light-gray);
+        padding: 40px 20px;
+      }
+
+      .card-img-top {
+        height: 200px; /* Tinggi seragam untuk semua gambar */
+        object-fit: cover; /* Biar gambar tetap proporsional, tidak gepeng */
+        width: 100%; /* Biar memenuhi lebar card */
+      }
+
+      .portfolio h2 {
+        color: var(--primary-black);
+        text-align: center;
+      }
+
+      .project .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 10px;
+      }
+
+      .tech-tags span {
+        background-color: #e8f0eb;
+        color: #2d6a3f;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 50px;
+        border: 1px solid #c3dcc9;
+      }
+
+      .project img {
+        border-radius: 10px 10px 0 0;
+      }
+
+      @media (min-width: 992px) {
+        .w-md-50 {
+          width: 50% !important;
+        }
+      }
+
+      .abu {
+        background-color: var(--light-gray);
+      }
+      .popover {
+        position: absolute;
+        z-index: 1070;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary-black);
+        color: var(--white);
+        text-align: center;
+        padding: 15px;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background-color: var(--white);
+        padding: 80px 20px;
+      }
+
+      .contact-card {
+        max-width: 500px;
+        margin: 24px auto 0;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 32px;
+      }
+
+      .contact-card .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        padding: 10px 4px;
+        font-size: 0.95rem;
+      }
+
+      .contact-card .form-control:focus {
+        box-shadow: none;
+        border-bottom-color: var(--primary-green);
+      }
+
+      .contact-submit-btn {
+        border-radius: 50px;
+        font-weight: 600;
+        padding: 12px;
+      }
+
+      .portfolio .btn-outline-primary {
+        color: var(--primary-green);
+        border-color: var(--primary-green);
+      }
+
+      .portfolio .btn-outline-primary:hover {
+        background-color: var(--primary-green);
+        color: #fff;
+        border-color: var(--primary-green);
+      }
+
+      /* Modal */
+      .modal-content {
+        border-radius: 10px;
+      }
+
+      .modal-header {
+        background-color: var(--primary-black);
+        color: var(--white);
+      }
+
+      .modal-footer .btn-primary {
+        background-color: var(--primary-green);
+        border: none;
+      }
+
+      .web-text {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .icon-hijau i {
+        color: var(--primary-green);
+      }
+
+      .btn-success {
+        background-color: #2d6a3f !important;
+        border-color: #2d6a3f !important;
+      }
+
+      .btn-success:hover {
+        background-color: #245832 !important;
+        border-color: #1f4d2b !important;
+      }
+
+      .developer-text {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      .project {
+        transition: all 0.4s ease-in-out;
+      }
+
+      section {
+        scroll-margin-top: 40px;
+      }
+
+      .filter-btn.active {
+        background-color: #2d6a3f !important;
+        color: white !important;
+        border-color: #2d6a3f !important;
+      }
+      .btn-outline-success {
+        color: #2d6a3f;
+        border-color: #2d6a3f;
+      }
+      .btn-outline-success:hover {
+        background-color: #2d6a3f;
+        color: #fff;
+      }
+
+      .brand-large {
+        font-size: 1.75rem;
+        line-height: 1;
+        text-shadow: 0 0 5px #3d8a52, 0 0 10px #3d8a52;
+      }
+
+      .brand-large {
+        font-size: 1.75rem; /* bisa coba 2rem kalau masih kurang gede */
+        line-height: 1; /* biar gak nambah tinggi navbar */
+      }
+
+      #portfolio .card {
+        background-color: var(--light-gray);
+      }
+      /* Reveal Animation */
+      .reveal-bottom {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold brand-large" href="#">Fikri</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#" data-i18n="nav_home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#aboutme" data-i18n="nav_about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#portfolio" data-i18n="nav_project">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#contact" data-i18n="nav_contact">Contact</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a
+                href="CV_MutsaqofulFikri.pdf"
+                download="CV_MutsaqofulFikri.pdf"
+                class="btn btn-success btn-sm text-white ms-md-3 mt-2 mt-md-0"
+                data-i18n="nav_download"
+              >
+                Download CV
+              </a>
+            </li>
+            <li class="nav-item ms-md-2 mt-2 mt-md-0 d-flex align-items-center">
+              <a href="#" id="lang-toggle" class="btn btn-outline-light btn-sm fw-bold px-2" style="cursor: pointer;" title="Language">EN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- NAVBAR END -->
+
+    <!-- HERO SECTION -->
+    <section class="hero text-center text-sm-start reveal-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-5 p-0 text-center text-md-start">
+            <div class="container">
+              <h5 data-i18n="hero_hi">Hi I am</h5>
+              <h3 class="text-success fw-bold">Mutsaqoful Fikri</h3>
+
+              <!-- FOTO MUNCUL DI SINI KHUSUS LAYAR KECIL -->
+              <div class="d-block d-md-none my-3">
+                <img
+                  src="foto.jpg"
+                  alt="foto"
+                  width="300px"
+                  class="rounded-circle border border-3"
+                  style="border-radius: 50%"
+                />
+              </div>
+
+              <div class="my-0">
+                <h1 class="display-1 my-0 fw-bold order-md-1" data-i18n="hero_web">Web</h1>
+                <h1 class="display-1 fw-bold text-md-end order-md-2" data-i18n="hero_developer">
+                  Developer
+                </h1>
+              </div>
+
+              <p class="mt-3" data-i18n="hero_desc">
+                Membangun solusi digital tangkas dengan ekosistem Next.js dan React. Memanfaatkan AI sebagai pair-programmer untuk merancang arsitektur web yang scalable dan berkinerja tinggi.
+              </p>
+
+              <a href="#aboutme" class="btn btn-success ms-2" data-i18n="hero_btn">Pelajari lebih lanjut</a>
+            </div>
+          </div>
+
+          <!-- FOTO UTAMA UNTUK LAYAR LEBAR -->
+          <div class="col-md-7 text-center mt-4 d-none d-md-block">
+            <img
+              src="foto.jpg"
+              alt="foto"
+              width="350px"
+              class="rounded-circle border border-5 ms-md-5"
+              style="border-radius: 50%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="about" id="aboutme">
+      <div class="container">
+        <div class="about-card reveal-bottom">
+          <p data-i18n="about_desc">
+            Lulusan bootcamp Harisenin.com dan Pondok IT Jogja dengan minat kuat pada Web Development (React 19, Next.js 16, Tailwind CSS, Redux, Zustand, MySQL). Memiliki keunggulan dalam kemampuan adaptasi cepat dan menerapkan ekosistem "Vibe Engineering" merancang arsitektur sistem secara fundamental dan mendelegasikan eksekusi kepada AI untuk efisiensi development yang maksimal. Saat ini mencari peluang penuh waktu sebagai Fullstack Developer untuk mengaplikasikan keahlian modern web development dan terus bertumbuh menuju visi menjadi Senior Software & AI Engineer.
+          </p>
+          <div class="about-footer">
+            <img src="foto.jpg" alt="Mutsaqoful Fikri" />
+            <div class="stat">
+              <div class="number">1<span>+</span></div>
+              <div class="label" data-i18n="about_exp">Years of Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS & TECH STACK -->
+    <section class="tools-section reveal-bottom" id="tools">
+      <div class="container">
+        <h2 class="display-6" data-i18n="tools_title">Tools</h2>
+        <p class="subtitle" data-i18n="tools_subtitle">Berikut beberapa tools yang biasa saya gunakan untuk pembuatan website atau desain</p>
+
+        <div class="tools-grid">
+          <!-- Tech Stack -->
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <div class="tool-info">
+              <div class="tool-name">React JS</div>
+              <div class="tool-label">Framework</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+            <div class="tool-info">
+              <div class="tool-name">Next.js</div>
+              <div class="tool-label">Framework</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" />
+            <div class="tool-info">
+              <div class="tool-name">Tailwind CSS</div>
+              <div class="tool-label">Framework</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+            <div class="tool-info">
+              <div class="tool-name">Bootstrap</div>
+              <div class="tool-label">Framework</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <div class="tool-info">
+              <div class="tool-name">Javascript</div>
+              <div class="tool-label">Language</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+            <div class="tool-info">
+              <div class="tool-name">TypeScript</div>
+              <div class="tool-label">Language</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <div class="tool-info">
+              <div class="tool-name">Node JS</div>
+              <div class="tool-label">Javascript Runtime</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+            <div class="tool-info">
+              <div class="tool-name">MySQL</div>
+              <div class="tool-label">Database</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
+            <div class="tool-info">
+              <div class="tool-name">Redux</div>
+              <div class="tool-label">State Management</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="Vite" />
+            <div class="tool-info">
+              <div class="tool-name">Vite</div>
+              <div class="tool-label">Build Tool</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg" alt="Zustand" />
+            <div class="tool-info">
+              <div class="tool-name">Zustand</div>
+              <div class="tool-label">State Management</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg" alt="Axios" />
+            <div class="tool-info">
+              <div class="tool-name">Axios</div>
+              <div class="tool-label">HTTP Client</div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
+            <div class="tool-info">
+              <div class="tool-name">Visual Studio Code</div>
+              <div class="tool-label">Code Editor</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+            <div class="tool-info">
+              <div class="tool-name">Github</div>
+              <div class="tool-label">Repository</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+            <div class="tool-info">
+              <div class="tool-name">Figma</div>
+              <div class="tool-label">Design App</div>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" />
+            <div class="tool-info">
+              <div class="tool-name">Vercel</div>
+              <div class="tool-label">Deployment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio reveal-bottom" id="portfolio">
+      <div class="container">
+        <h2 class="fw-bold display-6" data-i18n="port_title">My Projects</h2>
+        <p class="w-100 w-md-50 mx-auto text-center" data-i18n="port_subtitle">
+          Kumpulan project yang sudah saya kerjakan, mulai dari latihan dasar
+          hingga aplikasi fullstack yang di-deploy ke production.
+        </p>
+
+        <div
+          class="text-center mb-4 d-flex justify-content-center flex-wrap gap-2"
+        >
+          <button
+            type="button"
+            class="btn btn-outline-success filter-btn"
+            data-filter="all"
+            data-i18n="filter_all"
+          >
+            All
+          </button>
+          <div class="btn-group" role="group" aria-label="Filter Portfolio">
+            <button
+              type="button"
+              class="btn btn-outline-success filter-btn active"
+              data-filter="fullstack"
+              data-i18n="filter_fullstack"
+            >
+              Fullstack Apps
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success filter-btn"
+              data-filter="landing"
+              data-i18n="filter_landing"
+            >
+              Landing Page
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success filter-btn"
+              data-filter="tools"
+              data-i18n="filter_tools"
+            >
+              Web Tools
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success filter-btn"
+              data-filter="games"
+              data-i18n="filter_games"
+            >
+              Mini Games
+            </button>
+          </div>
+        </div>
+
+        <div class="row projects mt-4">
+
+          <!-- ===== FULLSTACK APPS ===== -->
+          <div class="col-md-4 col-sm-6 mb-4 project fullstack">
+            <div class="card abu h-100">
+              <a href="https://fullstack-chill-movie.vercel.app/" target="_blank">
+                <img
+                  src="fullstack-chill-movie.png"
+                  alt="Chill Movie App"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Chill Movie App</h5>
+                  <a href="https://github.com/vviqry/fullstack-chill-movie" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>Next.js</span><span>React</span><span>Tailwind</span><span>Redux</span><span>Zustand</span><span>MySQL</span><span>Axios</span>
+                </div>
+                <p class="card-text" data-i18n="proj1_desc">
+                  Aplikasi streaming film fullstack dengan Next.js, fitur login/register, watchlist, dan integrasi API.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project fullstack">
+            <div class="card abu h-100">
+              <a href="https://music-api-steel-beta.vercel.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://music-api-steel-beta.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Music API"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Music API - Upload &amp; Play</h5>
+                  <a href="https://github.com/vviqry/Music-API" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>Node.js</span><span>Express</span><span>MySQL</span><span>Multer</span>
+                </div>
+                <p class="card-text" data-i18n="proj2_desc">
+                  Aplikasi musik fullstack dengan fitur upload dan play lagu via API backend.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== LANDING PAGE ===== -->
+          <div class="col-md-4 col-sm-6 mb-4 project landing">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/Mixue/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://vviqry.github.io/Mixue/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Mixue Landing Page"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Mixue Landing Page</h5>
+                  <a href="https://github.com/vviqry/Mixue" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                </div>
+                <p class="card-text" data-i18n="proj3_desc">
+                  Landing page brand Mixue dengan Bootstrap. Latihan layouting dan desain responsif.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project landing">
+            <div class="card abu h-100">
+              <a href="https://pisang-keju-jefri.netlify.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://pisang-keju-jefri.netlify.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Pisang Keju Jefri"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Pisang Keju Crispy Jefri</h5>
+                  <a href="https://github.com/vviqry/Pisang-keju" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj4_desc">
+                  Landing page produk UMKM pisang keju crispy. Desain eye-catching.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project landing">
+            <div class="card abu h-100">
+              <a href="https://kue-bolu-viral.vercel.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://kue-bolu-viral.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Kue Bolu Viral"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Kue Bolu Viral 15000</h5>
+                  <a href="https://github.com/vviqry/Kue-Bolu-Viral" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>React</span><span>TypeScript</span><span>Vite</span>
+                </div>
+                <p class="card-text" data-i18n="proj5_desc">
+                  Website promosi kue bolu pisang viral dari Lima Puluh Kota.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project landing">
+            <div class="card abu h-100">
+              <a href="https://webpro-studio.netlify.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://webpro-studio.netlify.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="WebPro Studio"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">WebPro Studio</h5>
+                  <a href="https://github.com/vviqry/WebPro-Studio" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj6_desc">
+                  Landing page jasa pembuatan website profesional untuk UMKM Sumatra Barat.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project landing">
+            <div class="card abu h-100">
+              <a href="https://juice-vert.vercel.app/" target="_blank">
+                <img
+                  src="Jus.png"
+                  alt="Juice Stop"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Juice Stop</h5>
+                  <a href="https://github.com/vviqry/juice" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>Next.js</span><span>React</span><span>Tailwind</span><span>Zustand</span>
+                </div>
+                <p class="card-text">
+                  Landing page premium toko minuman jus segar dengan menu interaktif dan integrasi WhatsApp order.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== WEB TOOLS ===== -->
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/todo_list/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://vviqry.github.io/todo_list/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="To-Do List"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">To-Do List App</h5>
+                  <a href="https://github.com/vviqry/To-do-list-A" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj7_desc">
+                  Aplikasi to-do list interaktif dengan fitur tambah, hapus, dan tandai tugas selesai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://mf-age-calculator.netlify.app/" target="_blank">
+                <img
+                  src="mf-age-calculator.png"
+                  alt="Age Calculator"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Age Calculator</h5>
+                  <a href="https://github.com/vviqry/age-calculator" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>React</span><span>TypeScript</span><span>Vite</span>
+                </div>
+                <p class="card-text" data-i18n="proj8_desc">
+                  Kalkulator umur yang menghitung usia berdasarkan tanggal lahir. UI clean dan responsif.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://mf-css-gradient-generator.netlify.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://mf-css-gradient-generator.netlify.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="CSS Gradient Generator"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">CSS Gradient Generator</h5>
+                  <a href="https://github.com/vviqry/background-generator" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>React</span><span>TypeScript</span><span>Vite</span>
+                </div>
+                <p class="card-text" data-i18n="proj9_desc">
+                  Tool generator gradient CSS dengan preview real-time dan copy kode otomatis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/Bisnis_model_canvas/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://vviqry.github.io/Bisnis_model_canvas/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Business Model Canvas"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Business Model Canvas</h5>
+                  <a href="https://github.com/vviqry/Bisnis_model_canvas" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj10_desc">
+                  Tool visualisasi Business Model Canvas interaktif untuk perencanaan bisnis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/expand-button/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://vviqry.github.io/expand-button/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Expand Button"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Expand Button</h5>
+                  <a href="https://github.com/vviqry/expand-button" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj11_desc">
+                  Komponen UI expand/collapse interaktif dengan animasi smooth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project tools">
+            <div class="card abu h-100">
+              <a href="https://mf-basic-contact-form.netlify.app/" target="_blank">
+                <img
+                  src="https://api.microlink.io/?url=https://mf-basic-contact-form.netlify.app/&screenshot=true&meta=false&embed=screenshot.url"
+                  alt="Contact Form"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Basic Contact Form</h5>
+                  <a href="https://github.com/vviqry/basic-contact-form" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span>
+                </div>
+                <p class="card-text" data-i18n="proj12_desc">
+                  Form kontak fungsional dengan validasi input dan desain clean.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== MINI GAMES ===== -->
+          <div class="col-md-4 col-sm-6 mb-4 project games">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/tembakkoruptor/" target="_blank">
+                <img
+                  src="tembakkoruptor.png"
+                  alt="Tembak Koruptor"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Tembak Koruptor JS</h5>
+                  <a href="https://github.com/vviqry/tembakkoruptor" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj13_desc">
+                  Game kecil iseng buat nembak koruptor. Latihan JavaScript yang seru
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4 project games">
+            <div class="card abu h-100">
+              <a href="https://vviqry.github.io/Drum_Kit/" target="_blank">
+                <img
+                  src="Drum_Kit.png"
+                  alt="Drum Kit"
+                  class="card-img-top"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="card-title mb-0">Drum Kit Interaktif</h5>
+                  <a href="https://github.com/vviqry/Drum_Kit" target="_blank" title="View Source Code on Github" class="text-decoration-none">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Repo" width="24" height="24" class="opacity-75" onmouseover="this.classList.remove('opacity-75'); this.style.transform='scale(1.1)';" onmouseout="this.classList.add('opacity-75'); this.style.transform='scale(1)';" style="transition: all 0.3s ease;"/>
+                  </a>
+                </div>
+                <div class="tech-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <p class="card-text" data-i18n="proj14_desc">
+                  Drum kit interaktif klik tombol atau pencet keyboard, langsung bunyi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section reveal-bottom" id="contact">
+      <div class="container">
+        <h2 class="fw-bold display-6 text-center" data-i18n="contact_title">Contact</h2>
+        <p class="text-center text-muted" data-i18n="contact_subtitle">Mari terhubung dengan saya</p>
+
+        <div class="contact-card">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="63a8c4c6-596a-4d3f-98e0-57f309c132d5" />
+
+            <div class="mb-3">
+              <label for="fullname" class="form-label fw-bold" data-i18n="contact_name">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullname"
+                name="name"
+                placeholder="Input Your Full Name"
+                data-i18n="ph_name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold" data-i18n="contact_email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Input Your Email"
+                data-i18n="ph_email"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label fw-bold" data-i18n="contact_message">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Message ..."
+                data-i18n="ph_message"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 btn-lg contact-submit-btn" data-i18n="contact_send">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">&copy; 2024 Mutsaqoful Fikri. All rights reserved.</footer>
+
+
+
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const projects = document.querySelectorAll(".project");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+
+        // Show Fullstack Apps projects on load by default
+        const defaultFilter = "fullstack";
+        projects.forEach((project) => {
+          project.style.display = project.classList.contains(defaultFilter)
+            ? "block"
+            : "none";
+        });
+
+        // Filter logic
+        filterBtns.forEach((button) => {
+          button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+
+            // Update active button
+            filterBtns.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Show/hide projects
+            projects.forEach((project) => {
+              if (filter === "all") {
+                project.style.display = "block";
+              } else {
+                project.style.display = project.classList.contains(filter)
+                  ? "block"
+                  : "none";
+              }
+            });
+          });
+        });
+      });
+
+      // Scroll Reveal Animation (Intersection Observer)
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal-bottom").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

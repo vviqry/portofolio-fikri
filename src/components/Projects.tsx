@@ -8,6 +8,16 @@ type FilterKey = "all" | "fullstack" | "landing" | "tools" | "games";
 const projectsList = [
   // ===== FULLSTACK APPS =====
   {
+    id: 16,
+    title: "Sub-Todo AI Task Manager",
+    keyDesc: "proj16_desc",
+    img: "/todolist_ai.png",
+    repo: "https://github.com/vviqry/todo-list",
+    live: "https://sub-todo.vercel.app/",
+    tags: ["Next.js", "Tailwind", "Zustand", "Clerk", "Gemini AI"],
+    category: "fullstack" as FilterKey,
+  },
+  {
     id: 1,
     title: "Chill Movie App",
     keyDesc: "proj1_desc",

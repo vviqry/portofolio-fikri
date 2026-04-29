@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { MagicButton } from "./ui/MagicButton";
 import { FaPaperPlane } from "react-icons/fa";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaCodepen } from "react-icons/fa";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -122,6 +122,15 @@ const Contact = () => {
             title="LinkedIn"
           >
             <FaLinkedin size={24} />
+          </a>
+          <a
+            href="https://codepen.io/Mutsaqoful-Fikri/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-neutral-500 hover:text-purple transition-colors"
+            title="CodePen"
+          >
+            <FaCodepen size={24} />
           </a>
         </div>
       </div>

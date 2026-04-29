@@ -12,7 +12,7 @@ const projectsList = [
     title: "Sub-Todo AI Task Manager",
     keyDesc: "proj16_desc",
     img: "/todolist_ai.png",
-    repo: "https://github.com/vviqry/todo-list",
+    repo: "https://github.com/vviqry/AI_todolist",
     live: "https://sub-todo.vercel.app/",
     tags: ["Next.js", "Tailwind", "Zustand", "Clerk", "Gemini AI"],
     category: "fullstack" as FilterKey,

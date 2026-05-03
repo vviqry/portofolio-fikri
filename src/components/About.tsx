@@ -37,7 +37,7 @@ const About = () => {
             </div>
 
             {/* Download CV */}
-            <a href="/CV_M.Fikri.pdf" download className="w-full sm:w-auto">
+            <a href="/CV.Fikri.pdf" download className="w-full sm:w-auto">
               <MagicButton
                 title={t.nav_download}
                 icon={<FaDownload />}

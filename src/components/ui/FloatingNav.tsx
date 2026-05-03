@@ -69,7 +69,7 @@ export const FloatingNav = () => {
           {/* Right: Desktop actions */}
           <div className="hidden md:flex items-center gap-3 z-10">
             <a
-              href="/CV_M.Fikri.pdf"
+              href="/CV.Fikri.pdf"
               download
               className="flex items-center gap-1.5 text-sm font-medium text-purple hover:text-white transition-colors border border-purple/40 hover:border-purple rounded-full px-4 py-1.5"
             >
@@ -116,7 +116,7 @@ export const FloatingNav = () => {
               </a>
             ))}
             <a
-              href="/CV_M.Fikri.pdf"
+              href="/CV.Fikri.pdf"
               download
               onClick={handleNavClick}
               className="flex items-center gap-2 text-sm font-medium text-purple border border-purple/40 rounded-full px-4 py-2 w-fit"
